@@ -3,7 +3,7 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        System.out.println(isCatPlaying(true,46));
+        System.out.println(area(-5.0) );
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
@@ -42,8 +42,7 @@ public class Main {
                 return false;
             }
 
-            }
-        if(isSummer){
+            } else if(isSummer){
             if(temp>=35 && temp<=45){
                 return true;
             }else {
@@ -57,11 +56,19 @@ public class Main {
     }
 
     public static double area(double width, double height) {
-        return width * height;
+        if (width<0 || height<0) {
+            return -1;
+        }else {
+            return width*height;
+        }
     }
 
     public static double area(double radius) {
-        return radius * radius;
+       if (radius<0) {
+           return -1;
+       }else {
+           return Math.pow(radius, 2)*Math.PI;
+       }
     }
 
 
